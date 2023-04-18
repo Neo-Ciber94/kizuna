@@ -1,3 +1,5 @@
+#![doc = include_str!("../README.md")]
+
 /// Provides a mechanism for insert and get dependencies that may fail.
 pub mod try_locator;
 
