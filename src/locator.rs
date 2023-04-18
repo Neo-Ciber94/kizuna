@@ -1,3 +1,5 @@
+#![allow(clippy::type_complexity)]
+
 use std::{
     any::{Any, TypeId},
     collections::HashMap,
@@ -72,7 +74,7 @@ impl Locator {
                 value.downcast::<T>().map(|x| *x).ok()
             }
             Provider::Factory(f) => {
-                let value = f(&self);
+                let value = f(self);
                 value.downcast::<T>().map(|x| *x).ok()
             }
         }

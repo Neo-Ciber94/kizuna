@@ -51,7 +51,7 @@ impl TryLocator for Locator {
                     .and_then(std::convert::identity)
             }
             Provider::Factory(f) => {
-                let value = f(&self);
+                let value = f(self);
                 value
                     .downcast::<Result<T, LocatorError>>()
                     .map(|x| *x)
