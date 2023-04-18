@@ -1,5 +1,10 @@
 # kizuna
 
+[![CI-badge]](ci)
+
+[CI-badge]: https://github.com/Neo-Ciber94/kizuna/actions/workflows/ci.yml/badge.svg
+[ci]: https://github.com/Neo-Ciber94/kizuna/actions/workflows/ci.yml
+
 🔍 A simple service locator for Rust.
 
 This library provides a simple service locator for Rust programs. It allows for easy insertion and retrieval of values by type, and supports both single instance values and values created by factory functions.
