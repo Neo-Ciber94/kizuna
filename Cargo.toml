@@ -1,7 +1,7 @@
 [package]
 name = "kizuna"
 description = "A simple service locator"
-keywords = ["dependency injection", "service locator", "patterns", "di"]
+keywords = ["dependency-injection", "service-locator", "patterns", "di"]
 categories = ["rust-patterns", "asynchronous"]
 version = "0.1.0"
 edition = "2021"
