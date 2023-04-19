@@ -71,6 +71,10 @@ async fn main() {
 }
 ```
 
+## Test
+
+Run tests with `cargo test --lib`
+
 ## License
 
 This project is licensed under the MIT License
