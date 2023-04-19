@@ -9,8 +9,8 @@ use crate::{AsyncInvoke, FromLocator, Invoke, LocatorError};
 
 /// A wrapper that stores the services from a locator.
 pub enum Provider {
-    Single(Box<dyn Fn() -> Box<dyn Any + Send + Sync>>),
-    Factory(Box<dyn Fn(&Locator) -> Box<dyn Any + Send + Sync>>),
+    Single(Box<dyn Fn() -> Box<dyn Any + Send + Sync> + Send + Sync>),
+    Factory(Box<dyn Fn(&Locator) -> Box<dyn Any + Send + Sync> + Send + Sync>),
 }
 
 /// A service locator.
@@ -50,7 +50,7 @@ impl Locator {
     /// Inserts a value of type `T` into the `Locator` using a factory function that takes a `Locator` as input.
     pub fn insert_with<F, T>(&mut self, factory: F) -> Option<Provider>
     where
-        F: Fn(&Self) -> T + 'static,
+        F: Fn(&Self) -> T + 'static + Send + Sync,
         T: Send + Sync + 'static,
     {
         let provider = Provider::Factory(Box::new(move |locator| {

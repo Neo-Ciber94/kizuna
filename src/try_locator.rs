@@ -6,7 +6,7 @@ pub trait TryLocator: sealed::Sealed {
     /// Attempts to insert a service that may fail to resolve.
     fn try_insert_with<F, T>(&mut self, factory: F) -> Option<Provider>
     where
-        F: Fn(&Self) -> Result<T, LocatorError> + 'static,
+        F: Fn(&Self) -> Result<T, LocatorError> + Send + Sync + 'static,
         T: Send + Sync + 'static;
 
     /// Returns a service inserted by `try_insert_with` or fail if cannot be resolved.
@@ -18,7 +18,7 @@ pub trait TryLocator: sealed::Sealed {
 impl TryLocator for Locator {
     fn try_insert_with<F, T>(&mut self, factory: F) -> Option<Provider>
     where
-        F: Fn(&Self) -> Result<T, LocatorError> + 'static,
+        F: Fn(&Self) -> Result<T, LocatorError> + 'static + Send + Sync,
         T: Send + Sync + 'static,
     {
         let provider = Provider::Factory(Box::new(move |locator| {
