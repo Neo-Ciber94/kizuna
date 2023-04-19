@@ -8,3 +8,7 @@ edition = "2021"
 
 [dev-dependencies]
 tokio = { version = "1.27.0", features = ["rt", "rt-multi-thread", "macros"] }
+
+[[example]]
+name = "axum-server"
+path = "examples/axum-server/src/main.rs"
