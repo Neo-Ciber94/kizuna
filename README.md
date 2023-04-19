@@ -1,9 +1,16 @@
 # kizuna
 
-[![CI-badge]](ci)
+[![CI-badge]](ci) [![Latest Version]][crates.io] [![Docs][docs-badge]][docs-link]
 
 [CI-badge]: https://github.com/Neo-Ciber94/kizuna/actions/workflows/ci.yml/badge.svg
 [ci]: https://github.com/Neo-Ciber94/kizuna/actions/workflows/ci.yml
+
+[latest version]: https://img.shields.io/crates/v/kizuna.svg
+[crates.io]: https://crates.io/crates/kizuna
+
+[docs-badge]: https://img.shields.io/badge/docs-kizuna-blue.svg
+[docs-link]: https://docs.rs/kizuna/latest
+
 
 🔍 A simple service locator for Rust.
 
