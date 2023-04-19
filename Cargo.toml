@@ -5,6 +5,8 @@ keywords = ["dependency injection", "service locator", "patterns", "di"]
 categories = ["rust-patterns", "asynchronous"]
 version = "0.1.0"
 edition = "2021"
+license = "MIT"
+repository = "https://github.com/Neo-Ciber94/kizuna"
 
 [dev-dependencies]
 tokio = { version = "1.27.0", features = ["rt", "rt-multi-thread", "macros"] }
